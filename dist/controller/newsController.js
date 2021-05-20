@@ -31,13 +31,13 @@ class NewsController {
         const _id = req.params.id;
         let news = req.body;
         newsService_1.default.update(_id, news)
-            .then(news => helper_1.default.sendResponse(res, HttpStatus.OK, `A noticia foi atualizada com suscesso!`))
+            .then(news => helper_1.default.sendResponse(res, HttpStatus.OK, "A noticia foi atualizada com suscesso!"))
             .catch(error => console.error.bind(console, `Error ${error}`));
     }
     delete(req, res) {
         const _id = req.params.id;
         newsService_1.default.delete(_id)
-            .then(() => helper_1.default.sendResponse(res, HttpStatus.OK, `A noticia foi deletada com suscesso!`))
+            .then(() => helper_1.default.sendResponse(res, HttpStatus.OK, "A noticia foi deletada com suscesso!"))
             .catch(error => console.error.bind(console, `Error ${error}`));
     }
 }

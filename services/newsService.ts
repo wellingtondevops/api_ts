@@ -13,7 +13,6 @@ class NewsService {
 
     create(news){
         return NewsRepository.create(news);
-
     }
 
     update(_id, news){
@@ -23,9 +22,6 @@ class NewsService {
     delete(_id){
         return NewsRepository.findByIdAndRemove(_id);
     }
-
-
-
 }
 
 export default new NewsService();

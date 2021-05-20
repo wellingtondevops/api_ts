@@ -27,6 +27,7 @@ class NewsController {
     create(req, res) {
 
         let vm = req.body;
+                
         NewsService.create(vm)
             .then(news => Helper.sendResponse(res, HttpStatus.OK, "Notícia cadastrada com suscesso!"))
             .catch(error => console.error.bind(console, `Error ${error}`));
@@ -38,13 +39,13 @@ class NewsController {
         let news = req.body;
         
         NewsService.update(_id,news)        
-            .then(news => Helper.sendResponse(res, HttpStatus.OK, `A noticia foi atualizada com suscesso!`))
+            .then(news => Helper.sendResponse(res, HttpStatus.OK, "A noticia foi atualizada com suscesso!"))
             .catch(error => console.error.bind(console, `Error ${error}`));
     }
      delete(req, res) {
          const _id= req.params.id;
          NewsService.delete(_id)
-        .then(() => Helper.sendResponse(res, HttpStatus.OK, `A noticia foi deletada com suscesso!`))
+        .then(() => Helper.sendResponse(res, HttpStatus.OK, "A noticia foi deletada com suscesso!"))
          .catch(error => console.error.bind(console, `Error ${error}`));       
      }
 }
